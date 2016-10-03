@@ -29,14 +29,14 @@ public class EventAdapter extends ArrayAdapter<Events>
 {
     ArrayList<Events> eventList;            // List that contains the events' title and image(s)
 
-    LayoutInflater vi;
+    LayoutInflater inflater;
     int Resource;
     ViewHolder holder;                      // To make the scrolling between items smooth
 
     public EventAdapter(Context context, int resource, ArrayList<Events> objects)
     {
         super(context, resource, objects);
-        vi = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         Resource = resource;
         eventList = objects;
     }
@@ -49,7 +49,7 @@ public class EventAdapter extends ArrayAdapter<Events>
         if (v == null)
         {
             // inflate the layout
-            v = vi.inflate(Resource, null);
+            v = inflater.inflate(Resource, null);
 
             // set up the viewHolder.
             // Locate the imageView and the textView in the activity_main.xml
